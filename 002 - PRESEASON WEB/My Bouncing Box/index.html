@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html style="background-color: black">
+    <div
+        id="my_bouncing_box"
+        style="background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;"
+    >
+        robertalocmele
+    </div>
+    <script type="text/javascript">
+        const box = document.getElementById("my_bouncing_box");
+        let xPos = 0;
+        let yPos = 0;
+        let dx = 3;  
+        let dy = 3;  
+
+        const boxWidth = box.offsetWidth;
+        const boxHeight = box.offsetHeight;
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+
+        function moveBox() {
+            xPos += dx;
+            yPos += dy;
+
+            if (xPos + boxWidth >= screenWidth || xPos <= 0) {
+                dx = -dx; 
+            }
+            if (yPos + boxHeight >= screenHeight || yPos <= 0) {
+                dy = -dy; 
+            }
+
+            box.style.left = xPos + "px";
+            box.style.top = yPos + "px";
+        }
+
+        
+        setInterval(moveBox, 5);
+    </script>
+</html>

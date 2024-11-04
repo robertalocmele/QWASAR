@@ -1,0 +1,11 @@
+find . -type f -name "*.sh" -exec basename {} .sh \;
+
+/*
+Explanation:
+find .: Search in the current directory (.) and its subdirectories.
+-type f: Look for files only (ignore directories).
+-name "*.sh": Search for files that end with .sh.
+-exec basename {} .sh \;: For each file found, execute the basename command to print the file name without the .sh extension.
+{}: Represents each file found by find.
+.sh: This argument tells basename to strip the .sh extension from the file name.
+*/

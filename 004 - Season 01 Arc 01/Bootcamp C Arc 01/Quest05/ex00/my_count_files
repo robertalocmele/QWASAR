@@ -1,0 +1,20 @@
+find . | wc -l
+
+/*
+Let's break down the command find . | wc -l step by step:
+
+1. find .
+find is a command that searches for files and directories in a directory hierarchy.
+The dot (.) after find refers to the current directory. So, find . means "search for all files and directories starting from the current directory and going into its subdirectories."
+Without any additional options, find . will list all files and directories in the current directory and all of its subdirectories.
+2. | (Pipe Operator)
+The pipe (|) is used to send the output of one command as input to another command.
+In this case, the output of find . (which is the list of all files and directories) is being sent to the wc -l command.
+3. wc -l
+wc stands for word count, but it can also count lines, characters, and bytes.
+The option -l tells wc to count lines.
+So, wc -l will count how many lines of input it receives, and since the output of find . is a list of files/directories (one per line), it will count how many files and directories there are.
+Putting It Together:
+find . lists all the files and directories in the current directory and its subdirectories.
+| wc -l counts how many lines (files/directories) are found by find.
+*/
